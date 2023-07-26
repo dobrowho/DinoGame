@@ -41,7 +41,7 @@ function update(time)
     updateSpeedScale(delta);
     updateScore(delta);
 
-    if(checkLose)
+    if(checkLose())
     {
         return handleLose();
     }

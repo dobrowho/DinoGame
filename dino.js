@@ -2,6 +2,7 @@ import { incrementCostumProperty, getCostumProperty, setCostumProperty } from ".
 
 // Constants
 const dinoElem = document.querySelector('[data-dino]');
+const worldElem = document.querySelector('[data-world]');
 const JUMP_SPEED = .45;
 const GRAVITY = .0015; 
 const DINO_FRAME_COUNT = 2;
@@ -95,3 +96,14 @@ function onJump(e)
     yVelocity = JUMP_SPEED;
     isJumping = true;
 }
+
+worldElem.addEventListener('touchstart', () =>
+{
+    if(isJumping)
+    {
+        return;
+    }
+
+    yVelocity = JUMP_SPEED;
+    isJumping = true;
+});

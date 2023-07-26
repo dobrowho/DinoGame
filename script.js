@@ -18,6 +18,7 @@ setPixelToWorldScale()
 window.addEventListener('resize', setPixelToWorldScale);
 // First and single start
 document.addEventListener('keydown', handleStart, {once: true});
+document.addEventListener('touchstart', handleStart, {once: true});
 
 let lastTime;
 let speedScale;
@@ -105,6 +106,7 @@ function handleLose()
     setTimeout(() =>
     {
         document.addEventListener('keydown', handleStart, { once: true });
+        document.addEventListener('touchstart', handleStart, { once: true });
         startScreen.classList.remove("hide");
     }, 100);
 }
